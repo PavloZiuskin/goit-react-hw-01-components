@@ -1,9 +1,10 @@
 import PropTypes from "prop-types"
 import { Fragment } from "react"
+import {FriendStatus} from "components/FriendListItem/FriendItemStyled"
 export const FriendListItem = ({ avatar, name, isOnline, id }) => {
   return (
     <Fragment>
-      <span className="status">{isOnline}</span>
+      <FriendStatus isOnline={isOnline}>{isOnline}</FriendStatus>
       <img className="avatar" src={avatar} alt="User avatar" width="48" />
       <p className="name">{name}</p>
     </Fragment>

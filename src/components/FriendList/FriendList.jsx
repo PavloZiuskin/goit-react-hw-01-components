@@ -1,18 +1,20 @@
 import PropTypes from "prop-types"
+import {FriendContainer} from "components/FriendList/FrendListStyled"
 import { FriendListItem } from "components/FriendListItem/FriendListItem";
+import {FriendItemStyle} from 'components/FriendListItem/FriendItemStyled'
 export const FriendList=({ friends }) =>{
-  return (<ul className="friend-list">
+  return (<FriendContainer>
         {friends.map(friend => {
-          return(<li className="item" key={friend.id} >
+          return(<FriendItemStyle key={friend.id} >
           <FriendListItem
                 avatar={friend.avatar}
                 id={friend.id}
                 name={friend.name}
               isOnline={friend.isOnline} />
-            </li>
+            </FriendItemStyle>
           )
         })}
-      </ul>);
+      </FriendContainer>);
 }
 FriendList.propTypes = {
   friends: PropTypes.arrayOf(PropTypes.shape({
